@@ -1,9 +1,14 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:demo_flutter/components/hi_boss_app_bar.dart';
+import 'package:demo_flutter/models/rs_product_description_model.dart';
+import 'package:demo_flutter/models/rs_product_user_manual_model.dart';
+import 'package:demo_flutter/pages/remote_sales/product/rs_product_description_page.dart';
 import 'package:demo_flutter/utils/extensions/app_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../../models/rs_product_model.dart';
+
+import '../../../models/rs_product_model.dart';
+import 'rs_product_user_manual_page.dart';
 
 class RsProductDetailPage extends StatefulWidget {
   const RsProductDetailPage({
@@ -169,7 +174,21 @@ class _RsProductDetailPageState extends State<RsProductDetailPage> {
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 children: [
-                  _viewDetail('Xem mô tả sản phẩm'),
+                  _viewDetail(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => RsProductDescriptionPage(
+                              productName: widget.rsProduct.name ?? '',
+                              productDescription:
+                                  widget.rsProduct.detail?.description ??
+                                      rsPDescription,
+                            ),
+                          ),
+                        );
+                      },
+                      text: 'Xem mô tả sản phẩm'),
                   const SizedBox(height: 12.0),
                   Row(
                     children: [
@@ -205,7 +224,19 @@ class _RsProductDetailPageState extends State<RsProductDetailPage> {
                     ],
                   ),
                   const SizedBox(height: 12.0),
-                  _viewDetail('Xem hướng dẫn sử dụng'),
+                  _viewDetail(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => PsProductUserManualPage(
+                                userManual:
+                                    widget.rsProduct.detail?.userManual ??
+                                        rsPUserManual,
+                              ),
+                            ));
+                      },
+                      text: 'Xem hướng dẫn sử dụng'),
                 ],
               ),
             ),
@@ -249,15 +280,15 @@ class _RsProductDetailPageState extends State<RsProductDetailPage> {
                             ),
                             _buildEnterprise(
                               title: 'Website:',
-                              infomation:
-                                  widget.rsProduct.detail?.enterprise?.website ??
-                                      '',
+                              infomation: widget
+                                      .rsProduct.detail?.enterprise?.website ??
+                                  '',
                             ),
                             _buildEnterprise(
                               title: 'Địa chỉ:',
-                              infomation:
-                                  widget.rsProduct.detail?.enterprise?.address ??
-                                      '',
+                              infomation: widget
+                                      .rsProduct.detail?.enterprise?.address ??
+                                  '',
                             )
                           ],
                         ),
@@ -273,7 +304,7 @@ class _RsProductDetailPageState extends State<RsProductDetailPage> {
     );
   }
 
-  Row _buildEnterprise({required String title, required String infomation}) {
+  Widget _buildEnterprise({required String title, required String infomation}) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -325,20 +356,23 @@ class _RsProductDetailPageState extends State<RsProductDetailPage> {
     );
   }
 
-  Row _viewDetail(String text) {
-    return Row(
-      children: [
-        Text(
-          text,
-          style: const TextStyle(
-              color: Color(0xFF063782),
-              fontSize: 16,
-              fontWeight: FontWeight.w600,
-              decoration: TextDecoration.underline),
-        ),
-        const SizedBox(width: 4.0),
-        SvgPicture.asset('assets/icons/ic_expand_more.svg')
-      ],
+  Widget _viewDetail({Function()? onPressed, required String text}) {
+    return GestureDetector(
+      onTap: onPressed,
+      child: Row(
+        children: [
+          Text(
+            text,
+            style: const TextStyle(
+                color: Color(0xFF063782),
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+                decoration: TextDecoration.underline),
+          ),
+          const SizedBox(width: 4.0),
+          SvgPicture.asset('assets/icons/ic_expand_more.svg')
+        ],
+      ),
     );
   }
 }

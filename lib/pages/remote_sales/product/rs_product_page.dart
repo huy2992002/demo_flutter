@@ -1,9 +1,8 @@
 import 'package:demo_flutter/models/rs_product_model.dart';
-import 'package:demo_flutter/pages/remote_sales/rs_product_detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
-import '../../components/hi_boss_app_bar.dart';
+import '../../../components/hi_boss_app_bar.dart';
+import 'rs_product_detail_page.dart';
 import 'widget/rs_product_item.dart';
 
 class RsProductPage extends StatefulWidget {

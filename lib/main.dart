@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'pages/remote_sales/rs_product_page.dart';
+
+import 'pages/remote_sales/product/rs_product_page.dart';
 
 void main() {
   runApp(const MyApp());

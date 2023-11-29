@@ -11,6 +11,7 @@ class RsProductModel {
   bool? isSave;
   RsProductDetailModel? detail;
 
+
   RsProductModel();
 }
 
@@ -25,6 +26,9 @@ List<RsProductModel> rsProducts = [
     ..sole = 12
     ..isSave = true
     ..detail = rsProductDetails[0],
+
+    
+    
   RsProductModel()
     ..id = '2'
     ..name = 'Học toán cùng cây thước Bkids'
