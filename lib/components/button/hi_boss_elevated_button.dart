@@ -45,6 +45,7 @@ class HiBossElevatedButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
         ),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             if (icon != null) ...[
               SvgPicture.asset(
@@ -56,7 +57,7 @@ class HiBossElevatedButton extends StatelessWidget {
             ],
             Text(
               text,
-              style: AppStyle.h15w600.copyWith(color: textColor),
+              style: AppStyle.h14w400.copyWith(color: textColor),
             ),
           ],
         ),

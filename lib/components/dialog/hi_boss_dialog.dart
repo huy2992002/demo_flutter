@@ -42,15 +42,17 @@ class HiBossDialog {
         ),
         actions: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              HiBossElevatedButton.outlined(
-                onPressed: () => Navigator.pop(context, false),
-                text: cancel,
-                borderColor: AppColor.h063782,
-                textColor: AppColor.h063782,
+              Expanded(
+                child: HiBossElevatedButton.outlined(
+                  onPressed: () => Navigator.pop(context, false),
+                  text: cancel,
+                  borderColor: AppColor.h063782,
+                  textColor: AppColor.h063782,
+                ),
               ),
-              const SizedBox(width: 12.0),
+              const SizedBox(width: 10.0),
               HiBossElevatedButton(
                 onPressed: () {
                   action?.call();
