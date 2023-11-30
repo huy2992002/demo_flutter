@@ -38,6 +38,45 @@ class _RsProductDetailPageState extends State<RsProductDetailPage> {
       (widget.rsProduct.priceSale ?? 0) *
       (((widget.rsProduct.detail?.commissionReceived ?? 0) / 100));
 
+  void checkAddCart() {
+    for (RsProductModel p in cartRsProducts) {
+      if (p.id == widget.rsProduct.id) {
+        HiBossDialog.dialog(
+          context,
+          title: 'Thống báo',
+          content: 'Sản phẩm đã có trong giỏ hàng rồi',
+          confirm: 'Xem giỏ hàng',
+          cancel: 'Quay lại',
+          action: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const RsProductCartPage(),
+              ),
+            );
+          },
+        );
+        return;
+      }
+    }
+    cartRsProducts.add(widget.rsProduct);
+    HiBossDialog.dialog(
+      context,
+      title: 'Thành công',
+      content: 'Sản phẩm đã được thêm vào giỏ hàng của bạn!',
+      confirm: 'Xem giỏ hàng',
+      cancel: 'Quay lại',
+      action: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const RsProductCartPage(),
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -312,33 +351,19 @@ class _RsProductDetailPageState extends State<RsProductDetailPage> {
           children: [
             HiBossIconButton(
               onPressed: () {
-                HiBossDialog.dialog(
-                  context,
-                  title: 'Thành công',
-                  content: 'Sản phẩm đã được thêm vào giỏ hàng của bạn!',
-                  confirm: 'Xem giỏ hàng',
-                  cancel: 'Quay lại',
-                  action: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const RsProductCartPage(),
-                      ),
-                    );
-                  },
-                );
+                checkAddCart();
               },
               icon: 'assets/icons/ic_solar_carr.svg',
             ),
-            SizedBox(width: 14.0),
-            Expanded(
+            const SizedBox(width: 14.0),
+            const Expanded(
               child: HiBossElevatedButton(
                 icon: 'assets/icons/ic_edit.svg',
                 text: 'Tạo đơn',
               ),
             ),
-            SizedBox(width: 14.0),
-            Expanded(
+            const SizedBox(width: 14.0),
+            const Expanded(
               child: HiBossElevatedButton.outlined(
                 icon: 'assets/icons/ic_shared.svg',
                 text: 'Chia sẻ',

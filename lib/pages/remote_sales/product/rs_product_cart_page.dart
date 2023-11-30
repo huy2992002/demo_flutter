@@ -27,7 +27,7 @@ class _RsProductCartPageState extends State<RsProductCartPage> {
             .copyWith(top: 16.0, bottom: 76.0),
         itemCount: cartRsProducts.length,
         itemBuilder: (context, index) {
-          final product = cartRsProducts[index];
+          final product = cartRsProducts.reversed.toList()[index];
           return RsProductCart(
             onPressed: () {
               product.isSelectCart = !(product.isSelectCart ?? false);
