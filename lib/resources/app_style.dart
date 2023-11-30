@@ -45,6 +45,13 @@ class AppStyle {
     fontSize: 15.0,
     fontWeight: FontWeight.w600,
   );
+
+  static const h16w600 = TextStyle(
+    color: Colors.white,
+    fontSize: 15.0,
+    fontWeight: FontWeight.w600,
+  );
+
   static const h20w600 = TextStyle(
     color: AppColor.h063782,
     fontSize: 20.0,
