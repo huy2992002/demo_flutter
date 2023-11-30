@@ -11,6 +11,7 @@ class HiBossElevatedButton extends StatelessWidget {
     this.icon,
     this.color = AppColor.h12B76A,
     this.borderColor = AppColor.h12B76A,
+    this.radius = 8.0,
     this.textColor = Colors.white,
   });
 
@@ -21,6 +22,7 @@ class HiBossElevatedButton extends StatelessWidget {
     this.icon,
     this.color = Colors.white,
     this.borderColor = AppColor.h12B76A,
+    this.radius = 8.0,
     this.textColor = AppColor.h12B76A,
   });
 
@@ -29,6 +31,7 @@ class HiBossElevatedButton extends StatelessWidget {
   final String? icon;
   final Color color;
   final Color borderColor;
+  final double radius;
   final Color textColor;
 
   @override
@@ -42,7 +45,7 @@ class HiBossElevatedButton extends StatelessWidget {
         decoration: BoxDecoration(
           color: color,
           border: Border.all(color: borderColor),
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(radius),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
