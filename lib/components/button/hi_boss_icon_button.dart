@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../resources/app_color.dart';
+
+import '../../resources/app_color.dart';
 
 class HiBossIconButton extends StatelessWidget {
   const HiBossIconButton({

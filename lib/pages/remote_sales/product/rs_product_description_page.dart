@@ -1,7 +1,8 @@
-import 'package:demo_flutter/components/hi_boss_app_bar.dart';
 import 'package:demo_flutter/models/rs_product_description_model.dart';
 import 'package:demo_flutter/resources/app_style.dart';
 import 'package:flutter/material.dart';
+
+import '../../../components/button/hi_boss_app_bar.dart';
 
 class RsProductDescriptionPage extends StatelessWidget {
   const RsProductDescriptionPage({
