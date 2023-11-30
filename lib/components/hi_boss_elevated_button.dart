@@ -6,6 +6,7 @@ import 'package:flutter_svg/svg.dart';
 class HiBossElevatedButton extends StatelessWidget {
   const HiBossElevatedButton({
     super.key,
+    this.onPressed,
     required this.text,
     this.icon,
     this.color = AppColor.h12B76A,
@@ -15,6 +16,7 @@ class HiBossElevatedButton extends StatelessWidget {
 
   const HiBossElevatedButton.outlined({
     super.key,
+    this.onPressed,
     required this.text,
     this.icon,
     this.color = Colors.white,
@@ -22,6 +24,7 @@ class HiBossElevatedButton extends StatelessWidget {
     this.textColor = AppColor.h12B76A,
   });
 
+  final Function()? onPressed;
   final String text;
   final String? icon;
   final Color color;
@@ -30,28 +33,33 @@ class HiBossElevatedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(12.0),
-      decoration: BoxDecoration(
-        color: color,
-        border: Border.all(color: borderColor),
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: Row(
-        children: [
-          if (icon != null) ...[
-            SvgPicture.asset(
-              icon!,
-              // ignore: deprecated_member_use
-              color: textColor,
+    return InkWell(
+      onTap: onPressed,
+      splashColor: Colors.transparent,
+      highlightColor: Colors.transparent,
+      child: Container(
+        padding: const EdgeInsets.all(12.0),
+        decoration: BoxDecoration(
+          color: color,
+          border: Border.all(color: borderColor),
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Row(
+          children: [
+            if (icon != null) ...[
+              SvgPicture.asset(
+                icon!,
+                // ignore: deprecated_member_use
+                color: textColor,
+              ),
+              const SizedBox(width: 10.0),
+            ],
+            Text(
+              text,
+              style: AppStyle.h15w600.copyWith(color: textColor),
             ),
-            const SizedBox(width: 10.0),
           ],
-          Text(
-            text,
-            style: AppStyle.h15w600.copyWith(color: textColor),
-          ),
-        ],
+        ),
       ),
     );
   }
