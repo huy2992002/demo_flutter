@@ -10,7 +10,7 @@ class RsProductModel {
   int? sole;
   bool? isSave;
   RsProductDetailModel? detail;
-
+  bool? isSelectCart;
 
   RsProductModel();
 }
@@ -26,9 +26,6 @@ List<RsProductModel> rsProducts = [
     ..sole = 12
     ..isSave = true
     ..detail = rsProductDetails[0],
-
-    
-    
   RsProductModel()
     ..id = '2'
     ..name = 'Học toán cùng cây thước Bkids'
@@ -77,4 +74,11 @@ List<RsProductModel> rsProducts = [
     ..sole = 12
     ..isSave = false
     ..detail = rsProductDetails[5],
+];
+
+List<RsProductModel> cartRsProducts = [
+  rsProducts[2]..isSelectCart = false,
+  rsProducts[3]..isSelectCart = false,
+  rsProducts[1]..isSelectCart = false,
+  rsProducts[5]..isSelectCart = false,
 ];
