@@ -1,5 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:demo_flutter/components/hi_boss_app_bar.dart';
+import 'package:demo_flutter/components/hi_boss_elevated_button.dart';
+import 'package:demo_flutter/components/hi_boss_icon_button.dart';
 import 'package:demo_flutter/models/rs_product_description_model.dart';
 import 'package:demo_flutter/models/rs_product_user_manual_model.dart';
 import 'package:demo_flutter/pages/remote_sales/product/rs_product_description_page.dart';
@@ -161,7 +163,7 @@ class _RsProductDetailPageState extends State<RsProductDetailPage> {
                   Text(
                     '/${widget.rsProduct.unit ?? '-:-'}',
                     style: const TextStyle(
-                      color: Color(0xFFF48484A),
+                      color: Color(0xFF48484A),
                       fontSize: 20.0,
                       fontWeight: FontWeight.w500,
                     ),
@@ -297,6 +299,25 @@ class _RsProductDetailPageState extends State<RsProductDetailPage> {
                   ),
                 ],
               ),
+            )
+          ],
+        ),
+      ),
+      bottomNavigationBar: Container(
+        padding: const EdgeInsets.all(16.0),
+        child: const Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            HiBossIconButton(
+              icon: 'assets/icons/ic_solar_carr.svg',
+            ),
+            HiBossElevatedButton(
+              icon: 'assets/icons/ic_edit.svg',
+              text: 'Tạo đơn',
+            ),
+            HiBossElevatedButton.outlined(
+              icon: 'assets/icons/ic_shared.svg',
+              text: 'Chia sẻ',
             )
           ],
         ),
