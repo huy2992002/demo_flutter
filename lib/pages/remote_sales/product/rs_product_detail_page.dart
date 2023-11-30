@@ -1,7 +1,4 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:demo_flutter/components/hi_boss_app_bar.dart';
-import 'package:demo_flutter/components/hi_boss_elevated_button.dart';
-import 'package:demo_flutter/components/hi_boss_icon_button.dart';
 import 'package:demo_flutter/models/rs_product_description_model.dart';
 import 'package:demo_flutter/models/rs_product_user_manual_model.dart';
 import 'package:demo_flutter/pages/remote_sales/product/rs_product_description_page.dart';
@@ -9,6 +6,9 @@ import 'package:demo_flutter/utils/extensions/app_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../components/button/hi_boss_app_bar.dart';
+import '../../../components/button/hi_boss_elevated_button.dart';
+import '../../../components/button/hi_boss_icon_button.dart';
 import '../../../models/rs_product_model.dart';
 import 'rs_product_user_manual_page.dart';
 
@@ -305,7 +305,7 @@ class _RsProductDetailPageState extends State<RsProductDetailPage> {
       ),
       bottomNavigationBar: Container(
         padding: const EdgeInsets.all(16.0),
-        child: const Row(
+        child:  const Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             HiBossIconButton(
