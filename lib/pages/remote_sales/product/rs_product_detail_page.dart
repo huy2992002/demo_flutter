@@ -311,13 +311,19 @@ class _RsProductDetailPageState extends State<RsProductDetailPage> {
             HiBossIconButton(
               icon: 'assets/icons/ic_solar_carr.svg',
             ),
-            HiBossElevatedButton(
-              icon: 'assets/icons/ic_edit.svg',
-              text: 'Tạo đơn',
+            SizedBox(width: 14.0),
+            Expanded(
+              child: HiBossElevatedButton(
+                icon: 'assets/icons/ic_edit.svg',
+                text: 'Tạo đơn',
+              ),
             ),
-            HiBossElevatedButton.outlined(
-              icon: 'assets/icons/ic_shared.svg',
-              text: 'Chia sẻ',
+            SizedBox(width: 14.0),
+            Expanded(
+              child: HiBossElevatedButton.outlined(
+                icon: 'assets/icons/ic_shared.svg',
+                text: 'Chia sẻ',
+              ),
             )
           ],
         ),
