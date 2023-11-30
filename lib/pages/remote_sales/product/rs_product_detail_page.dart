@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:demo_flutter/components/dialog/hi_boss_dialog.dart';
 import 'package:demo_flutter/models/rs_product_description_model.dart';
 import 'package:demo_flutter/models/rs_product_user_manual_model.dart';
 import 'package:demo_flutter/pages/remote_sales/product/rs_product_description_page.dart';
@@ -305,10 +306,19 @@ class _RsProductDetailPageState extends State<RsProductDetailPage> {
       ),
       bottomNavigationBar: Container(
         padding: const EdgeInsets.all(16.0),
-        child:  const Row(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             HiBossIconButton(
+              onPressed: () {
+                HiBossDialog.dialog(
+                  context,
+                  title: 'Thành công',
+                  content: 'Sản phẩm đã được thêm vào giỏ hàng của bạn!',
+                  confirm: 'Xem giỏ hàng',
+                  cancel: 'Quay lại',
+                );
+              },
               icon: 'assets/icons/ic_solar_carr.svg',
             ),
             SizedBox(width: 14.0),
