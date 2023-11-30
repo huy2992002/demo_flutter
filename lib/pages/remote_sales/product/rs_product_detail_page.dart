@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:demo_flutter/components/dialog/hi_boss_dialog.dart';
 import 'package:demo_flutter/models/rs_product_description_model.dart';
 import 'package:demo_flutter/models/rs_product_user_manual_model.dart';
+import 'package:demo_flutter/pages/remote_sales/product/rs_product_cart_page.dart';
 import 'package:demo_flutter/pages/remote_sales/product/rs_product_description_page.dart';
 import 'package:demo_flutter/utils/extensions/app_extension.dart';
 import 'package:flutter/material.dart';
@@ -317,6 +318,14 @@ class _RsProductDetailPageState extends State<RsProductDetailPage> {
                   content: 'Sản phẩm đã được thêm vào giỏ hàng của bạn!',
                   confirm: 'Xem giỏ hàng',
                   cancel: 'Quay lại',
+                  action: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const RsProductCartPage(),
+                      ),
+                    );
+                  },
                 );
               },
               icon: 'assets/icons/ic_solar_carr.svg',

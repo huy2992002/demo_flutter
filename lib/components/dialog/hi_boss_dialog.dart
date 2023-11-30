@@ -55,8 +55,8 @@ class HiBossDialog {
               const SizedBox(width: 10.0),
               HiBossElevatedButton(
                 onPressed: () {
-                  action?.call();
                   Navigator.pop(context, true);
+                  action?.call();
                 },
                 text: confirm,
                 color: AppColor.h063782,
