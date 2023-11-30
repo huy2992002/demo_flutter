@@ -15,4 +15,10 @@ class AppStyle {
     fontSize: 14.0,
     fontWeight: FontWeight.w700,
   );
+
+  static const h15w600 = TextStyle(
+    color: Colors.white,
+    fontSize: 15.0,
+    fontWeight: FontWeight.w600,
+  );
 }

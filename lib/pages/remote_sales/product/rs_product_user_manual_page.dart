@@ -20,7 +20,7 @@ class PsProductUserManualPage extends StatelessWidget {
         title: 'Hướng dẫn sử dụng',
       ),
       body: ListView(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         children: [
           Text(
             userManual.text ?? '',
