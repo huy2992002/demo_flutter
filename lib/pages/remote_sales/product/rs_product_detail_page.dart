@@ -3,6 +3,7 @@ import 'package:demo_flutter/components/dialog/hi_boss_dialog.dart';
 import 'package:demo_flutter/models/rs_product_description_model.dart';
 import 'package:demo_flutter/models/rs_product_user_manual_model.dart';
 import 'package:demo_flutter/pages/remote_sales/product/rs_product_cart_page.dart';
+import 'package:demo_flutter/pages/remote_sales/product/rs_product_create_order.dart';
 import 'package:demo_flutter/pages/remote_sales/product/rs_product_description_page.dart';
 import 'package:demo_flutter/utils/extensions/app_extension.dart';
 import 'package:flutter/material.dart';
@@ -356,8 +357,18 @@ class _RsProductDetailPageState extends State<RsProductDetailPage> {
               icon: 'assets/icons/ic_solar_carr.svg',
             ),
             const SizedBox(width: 14.0),
-            const Expanded(
+            Expanded(
               child: HiBossElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => RsProductCreateOrder(
+                        product: widget.rsProduct..createOrderAt = '${DateTime.now()}',
+                      ),
+                    ),
+                  );
+                },
                 icon: 'assets/icons/ic_edit.svg',
                 text: 'Tạo đơn',
               ),

@@ -22,10 +22,34 @@ class AppStyle {
     fontWeight: FontWeight.w700,
   );
 
+  static const h13w400 = TextStyle(
+    color: Colors.grey,
+    fontSize: 13.0,
+    fontWeight: FontWeight.w400,
+  );
+
+  static const h13w500 = TextStyle(
+    color: Colors.grey,
+    fontSize: 13.0,
+    fontWeight: FontWeight.w400,
+  );
+
+  static const h13w600 = TextStyle(
+    color: AppColor.h949499,
+    fontSize: 13.0,
+    fontWeight: FontWeight.w600,
+  );
+
   static const h14w400 = TextStyle(
     color: AppColor.h48484A,
     fontSize: 14.0,
     fontWeight: FontWeight.w400,
+  );
+
+  static const h14w500 = TextStyle(
+    color: Colors.black,
+    fontSize: 14.0,
+    fontWeight: FontWeight.w500,
   );
 
   static const h14w600 = TextStyle(
@@ -40,10 +64,22 @@ class AppStyle {
     fontWeight: FontWeight.w700,
   );
 
+  static const h15w500 = TextStyle(
+    color: Colors.black,
+    fontSize: 15.0,
+    fontWeight: FontWeight.w500,
+  );
+
   static const h15w600 = TextStyle(
     color: Colors.white,
     fontSize: 15.0,
     fontWeight: FontWeight.w600,
+  );
+
+  static const h15w700 = TextStyle(
+    color: AppColor.hEB3E32,
+    fontSize: 15.0,
+    fontWeight: FontWeight.w700,
   );
 
   static const h16w600 = TextStyle(
