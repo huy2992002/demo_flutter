@@ -1,3 +1,5 @@
+import 'package:intl/intl.dart';
+
 extension ExDouble on double {
   String toFormat() {
     String st = toStringAsFixed(4);
@@ -21,5 +23,19 @@ extension ExDouble on double {
       }
     }
     return st2;
+  }
+}
+
+extension ExString on String? {
+  String toDateTimeFormat() {
+    if (this == null) {
+      return '--:--';
+    }
+    try {
+      return DateFormat('d/M/yyyy')
+          .format(DateTime.parse(this!).toLocal());
+    } on FormatException {
+      return '--:--';
+    }
   }
 }
