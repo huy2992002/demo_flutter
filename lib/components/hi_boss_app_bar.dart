@@ -28,8 +28,8 @@ class HiBossAppBar extends StatelessWidget implements PreferredSizeWidget {
             fit: BoxFit.cover),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0)
-            .copyWith(top: MediaQuery.of(context).padding.top),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0).copyWith(
+            top: MediaQuery.of(context).padding.top + 16, bottom: 16.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
