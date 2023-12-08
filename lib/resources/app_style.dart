@@ -4,6 +4,12 @@ import 'app_color.dart';
 class AppStyle {
   AppStyle._();
 
+  static const h11w600 = TextStyle(
+    color: AppColor.h48484A,
+    fontSize: 11.0,
+    fontWeight: FontWeight.w600,
+  );
+
   static const h12w400 = TextStyle(
     color: AppColor.h949499,
     fontSize: 12.0,
