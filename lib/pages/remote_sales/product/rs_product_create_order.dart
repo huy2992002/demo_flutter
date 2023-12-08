@@ -1,4 +1,4 @@
-import 'package:demo_flutter/components/button/hi_boss_app_bar.dart';
+import 'package:demo_flutter/components/hi_boss_app_bar.dart';
 import 'package:demo_flutter/components/button/hi_boss_elevated_button.dart';
 import 'package:demo_flutter/models/customer_model.dart';
 import 'package:demo_flutter/models/rs_product_model.dart';
