@@ -9,7 +9,7 @@ import 'package:demo_flutter/utils/extensions/app_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../components/button/hi_boss_app_bar.dart';
+import '../../../components/hi_boss_app_bar.dart';
 import '../../../components/button/hi_boss_elevated_button.dart';
 import '../../../components/button/hi_boss_icon_button.dart';
 import '../../../models/rs_product_model.dart';

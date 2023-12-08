@@ -1,3 +1,4 @@
+import 'package:demo_flutter/pages/main_page.dart';
 import 'package:flutter/material.dart';
 
 import 'pages/remote_sales/product/rs_product_page.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: const RsProductPage(),
+      home: const MainPage(),
     );
   }
 }
