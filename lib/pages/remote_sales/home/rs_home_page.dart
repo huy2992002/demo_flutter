@@ -129,8 +129,8 @@ class _RsHomePageState extends State<RsHomePage> {
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 3,
-                      crossAxisSpacing: 32.0,
-                      mainAxisSpacing: 16.0,
+                      crossAxisSpacing: 10.0,
+                      mainAxisSpacing: 10.0,
                     ),
                     itemBuilder: (BuildContext context, int index) {
                       return Column(
