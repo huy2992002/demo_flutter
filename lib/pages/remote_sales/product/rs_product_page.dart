@@ -1,6 +1,6 @@
+import 'package:demo_flutter/components/text_field/hi_boss_search_box.dart';
 import 'package:demo_flutter/models/rs_product_model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import '../../../components/hi_boss_app_bar.dart';
 import 'rs_product_detail_page.dart';
 import 'widget/rs_product_item.dart';
@@ -23,28 +23,7 @@ class _RsProductPageState extends State<RsProductPage> {
       ),
       body: Column(
         children: [
-          Container(
-            color: Colors.white,
-            child: TextFormField(
-              decoration: InputDecoration(
-                contentPadding: const EdgeInsets.symmetric(
-                  horizontal: 20.0,
-                  vertical: 18.0,
-                ),
-                hintText: 'Tìm kiếm ...',
-                hintStyle: const TextStyle(color: Colors.grey),
-                border: InputBorder.none,
-                prefixIcon: const Icon(
-                  Icons.search,
-                  color: Colors.grey,
-                ),
-                suffixIcon: SvgPicture.asset(
-                  'assets/icons/ic_menu_search.svg',
-                  fit: BoxFit.scaleDown,
-                ),
-              ),
-            ),
-          ),
+          const HiBossSearchBox(),
           Expanded(
             child: ListView.separated(
               padding: const EdgeInsets.all(16.0),

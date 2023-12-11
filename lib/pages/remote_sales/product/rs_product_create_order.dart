@@ -4,7 +4,7 @@ import 'package:demo_flutter/models/customer_model.dart';
 import 'package:demo_flutter/models/rs_product_model.dart';
 import 'package:demo_flutter/resources/app_color.dart';
 import 'package:demo_flutter/resources/app_style.dart';
-import 'package:demo_flutter/utils/extensions/app_extension.dart';
+import 'package:demo_flutter/utils/app_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

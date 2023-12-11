@@ -1,4 +1,4 @@
-import 'package:demo_flutter/utils/extensions/app_extension.dart';
+import 'package:demo_flutter/utils/app_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../../../models/rs_product_model.dart';
