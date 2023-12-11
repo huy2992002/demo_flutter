@@ -5,7 +5,7 @@ import 'package:demo_flutter/models/rs_product_user_manual_model.dart';
 import 'package:demo_flutter/pages/remote_sales/product/rs_product_cart_page.dart';
 import 'package:demo_flutter/pages/remote_sales/product/rs_product_create_order.dart';
 import 'package:demo_flutter/pages/remote_sales/product/rs_product_description_page.dart';
-import 'package:demo_flutter/utils/extensions/app_extension.dart';
+import 'package:demo_flutter/utils/app_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
