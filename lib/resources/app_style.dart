@@ -28,6 +28,12 @@ class AppStyle {
     fontWeight: FontWeight.w400,
   );
 
+  static const h12w600 = TextStyle(
+    color: AppColor.h48484A,
+    fontSize: 12.0,
+    fontWeight: FontWeight.w600,
+  );
+
   static const h12w700 = TextStyle(
     color: AppColor.hF04438,
     fontSize: 12.0,

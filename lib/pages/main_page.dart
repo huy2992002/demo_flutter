@@ -62,9 +62,9 @@ class _MainPageState extends State<MainPage> {
           children: [
             ...List.generate(
               5,
-              (index) => SizedBox(
-                child: GestureDetector(
-                  onTap: () => setState(() => currentIndex = index),
+              (index) => InkWell(
+                onTap: () => setState(() => currentIndex = index),
+                child: SizedBox(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
