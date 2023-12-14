@@ -3,7 +3,6 @@ import 'package:demo_flutter/models/rs_group_model.dart';
 import 'package:demo_flutter/pages/remote_sales/group/widgets/rs_group_item.dart';
 import 'package:demo_flutter/resources/app_color.dart';
 import 'package:demo_flutter/resources/app_style.dart';
-import 'package:demo_flutter/utils/app_extension.dart';
 import 'package:flutter/material.dart';
 
 class RsGroupPage extends StatefulWidget {
@@ -33,7 +32,7 @@ class _RsGroupPageState extends State<RsGroupPage>
         ),
         body: Column(
           children: [
-            Container(
+            SizedBox(
               height: 50,
               child: TabBar(
                 controller: _tabController,
