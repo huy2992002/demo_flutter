@@ -52,55 +52,58 @@ class _RsHomePageState extends State<RsHomePage> {
         preferredSize: const Size.fromHeight(100.0),
         child: Container(
           width: double.infinity,
-          height: 100,
+          height: MediaQuery.of(context).padding.top + 78,
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/images/img_background_appbar.png'),
               fit: BoxFit.fill,
             ),
           ),
-          child: Row(
-            children: [
-              const SizedBox(width: 16.0),
-              Container(
-                height: 50.0,
-                width: 50.0,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(user1.avatar ?? ''),
-                  ),
-                  border: Border.all(color: Colors.white, width: 2.0),
-                  shape: BoxShape.circle,
-                ),
-              ),
-              const SizedBox(width: 20.0),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    user1.name ?? '',
-                    style: AppStyle.h15w700.copyWith(color: Colors.white),
-                  ),
-                  const SizedBox(height: 4.0),
-                  Text(
-                    (user1.role ?? false) ? 'Doanh nghiệp' : 'Remote Sales',
-                    style: AppStyle.h13w700.copyWith(
-                      color: (user1.role ?? false)
-                          ? AppColor.h6CE9A6
-                          : AppColor.hFEC84B,
+          child: Padding(
+            padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
+            child: Row(
+              children: [
+                const SizedBox(width: 16.0),
+                Container(
+                  height: 50.0,
+                  width: 50.0,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(user1.avatar ?? ''),
                     ),
+                    border: Border.all(color: Colors.white, width: 2.0),
+                    shape: BoxShape.circle,
                   ),
-                ],
-              ),
-              const Spacer(),
-              SvgPicture.asset('assets/icons/ic_qr_code.svg'),
-              const SizedBox(width: 8.0),
-              SvgPicture.asset('assets/icons/ic_bell.svg'),
-              const SizedBox(width: 8.0),
-              SvgPicture.asset('assets/icons/ic_buy.svg'),
-              const SizedBox(width: 20.0),
-            ],
+                ),
+                const SizedBox(width: 20.0),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      user1.name ?? '',
+                      style: AppStyle.h15w700.copyWith(color: Colors.white),
+                    ),
+                    const SizedBox(height: 4.0),
+                    Text(
+                      (user1.role ?? false) ? 'Doanh nghiệp' : 'Remote Sales',
+                      style: AppStyle.h13w700.copyWith(
+                        color: (user1.role ?? false)
+                            ? AppColor.h6CE9A6
+                            : AppColor.hFEC84B,
+                      ),
+                    ),
+                  ],
+                ),
+                const Spacer(),
+                SvgPicture.asset('assets/icons/ic_qr_code.svg'),
+                const SizedBox(width: 8.0),
+                SvgPicture.asset('assets/icons/ic_bell.svg'),
+                const SizedBox(width: 8.0),
+                SvgPicture.asset('assets/icons/ic_buy.svg'),
+                const SizedBox(width: 20.0),
+              ],
+            ),
           ),
         ),
       ),
