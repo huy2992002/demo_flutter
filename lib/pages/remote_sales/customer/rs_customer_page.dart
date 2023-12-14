@@ -56,8 +56,8 @@ class _RsCustomerPageState extends State<RsCustomerPage> {
                             ...List.generate(
                               customer.labels?.length ?? 0,
                               (index) => Container(
-                                margin: EdgeInsets.only(right: 10.0),
-                                padding: EdgeInsets.symmetric(
+                                margin: const EdgeInsets.only(right: 10.0),
+                                padding: const EdgeInsets.symmetric(
                                     horizontal: 8.0, vertical: 6.0),
                                 decoration: BoxDecoration(
                                   color: Colors.white,

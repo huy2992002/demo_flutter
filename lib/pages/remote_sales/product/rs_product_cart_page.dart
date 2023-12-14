@@ -4,7 +4,7 @@ import 'package:demo_flutter/models/rs_product_model.dart';
 import 'package:demo_flutter/resources/app_color.dart';
 import 'package:flutter/material.dart';
 
-import 'widget/rs_product_cart.dart';
+import 'widgets/rs_product_cart.dart';
 
 class RsProductCartPage extends StatefulWidget {
   const RsProductCartPage({super.key});
