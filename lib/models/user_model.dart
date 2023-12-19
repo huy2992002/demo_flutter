@@ -1,4 +1,5 @@
 import 'package:demo_flutter/models/user_detail_model.dart';
+import 'package:demo_flutter/models/user_infomation_model.dart';
 
 class UserModel {
   String? avatar;
@@ -16,9 +17,35 @@ UserModel user1 = UserModel()
   ..detail = (UserDetailModel()
     ..position = 'CEO/ Founder'
     ..company = 'Công ty Cổ phần Giải pháp Công nghệ HifivePLUS'
-    ..phone = '0905 550 123'
-    ..phoneCompany = '0905 550 123'
-    ..email = 'trantran@gmail.com'
-    ..website = 'hifiveplus.com.vn'
-    ..facebook = 'Trần Văn Trung'
-    ..zalo = '0905 550 123');
+    ..informations = [
+      UserInfomationModel()
+        ..name = 'Số điện thoại'
+        ..icon = 'assets/icons/ic_phone.svg'
+        ..content = '0905 550 123'
+        ..status = true,
+      UserInfomationModel()
+        ..name = 'Số điện thoại Công Ty'
+        ..icon = 'assets/icons/ic_building_house.svg'
+        ..content = '0905 550 123'
+        ..status = true,
+      UserInfomationModel()
+        ..name = 'Email'
+        ..icon = 'assets/icons/ic_mail.svg'
+        ..content = 'trantran@gmail.com'
+        ..status = true,
+      UserInfomationModel()
+        ..name = 'Website'
+        ..icon = 'assets/icons/ic_website.svg'
+        ..content = 'hifiveplus.com.vn'
+        ..status = true,
+      UserInfomationModel()
+        ..name = 'Facebook'
+        ..icon = 'assets/icons/ic_facebook.svg'
+        ..content = 'Tran Binh Trong'
+        ..status = true,
+      UserInfomationModel()
+        ..name = 'Zalo'
+        ..icon = 'assets/icons/ic_zalo.svg'
+        ..content = 'Tran Binh Trong'
+        ..status = true,
+    ]);
