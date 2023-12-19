@@ -1,12 +1,9 @@
+import 'package:demo_flutter/models/user_infomation_model.dart';
+
 class UserDetailModel {
   String? position;
   String? company;
-  String? phone;
-  String? phoneCompany;
-  String? email;
-  String? website;
-  String? facebook;
-  String? zalo;
+  List<UserInfomationModel>? informations;
 
   UserDetailModel();
 }
