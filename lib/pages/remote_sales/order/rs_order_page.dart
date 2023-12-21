@@ -14,6 +14,24 @@ class RsOrderPage extends StatefulWidget {
 }
 
 class _RsOrderPageState extends State<RsOrderPage> {
+  List<RsOrderModel> _rsOrders = [];
+  List<RsOrderModel> _searchOrders = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _rsOrders = rsOrders;
+    _searchOrders = _rsOrders;
+  }
+
+  void _search(String searchText) {
+    searchText = searchText.toLowerCase();
+    _searchOrders = _rsOrders
+        .where((e) => (e.id ?? '').toLowerCase().contains(searchText))
+        .toList();
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +44,9 @@ class _RsOrderPageState extends State<RsOrderPage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const HiBossSearchBox(),
+          HiBossSearchBox(
+            onChange: _search,
+          ),
           Padding(
             padding:
                 const EdgeInsets.symmetric(vertical: 16.0).copyWith(left: 20.0),
@@ -37,10 +57,10 @@ class _RsOrderPageState extends State<RsOrderPage> {
           ),
           Expanded(
             child: ListView.separated(
-              itemCount: rsOrders.length,
+              itemCount: _searchOrders.length,
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               itemBuilder: (context, index) {
-                final order = rsOrders[index];
+                final order = _searchOrders[index];
                 return RsOrderItem(order: order);
               },
               separatorBuilder: (context, index) =>

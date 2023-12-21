@@ -13,32 +13,55 @@ class RsCustomerPage extends StatefulWidget {
 }
 
 class _RsCustomerPageState extends State<RsCustomerPage> {
+  List<CustomerModel> _rsCustomers = [];
+  List<CustomerModel> _searchCustomer = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _rsCustomers = rsCustomers;
+    _searchCustomer = _rsCustomers;
+  }
+
+  void _search(String searchText) {
+    searchText = searchText.toLowerCase();
+    _searchCustomer = _rsCustomers
+        .where((e) => (e.name ?? '').toLowerCase().contains(searchText))
+        .toList();
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColor.hF6F8FF,
-      appBar: const HiBossAppBar(
-        leftIcon: 'assets/icons/ic_refresh.svg',
-        title: 'Quản lý khách hàng nội bộ',
-        rightIcon: 'assets/icons/ic_add.svg',
-      ),
-      body: ListView(
-        children: [
-          const HiBossSearchBox(),
-          ListView.separated(
-            padding: const EdgeInsets.all(16.0),
-            physics: const NeverScrollableScrollPhysics(),
-            shrinkWrap: true,
-            itemCount: rsCustomers.length,
-            itemBuilder: (context, index) {
-              final customer = rsCustomers[index];
-              return RsCustomerItem(customer: customer);
-            },
-            separatorBuilder: (context, index) => const SizedBox(height: 12.0),
-          ),
-        ],
+    return GestureDetector(
+      onTap: FocusScope.of(context).unfocus,
+      child: Scaffold(
+        backgroundColor: AppColor.hF6F8FF,
+        appBar: const HiBossAppBar(
+          leftIcon: 'assets/icons/ic_refresh.svg',
+          title: 'Quản lý khách hàng nội bộ',
+          rightIcon: 'assets/icons/ic_add.svg',
+        ),
+        body: Column(
+          children: [
+            HiBossSearchBox(
+              onChange: _search,
+            ),
+            Expanded(
+              child: ListView.separated(
+                padding: const EdgeInsets.all(16.0),
+                itemCount: _searchCustomer.length,
+                itemBuilder: (context, index) {
+                  final customer = _searchCustomer[index];
+                  return RsCustomerItem(customer: customer);
+                },
+                separatorBuilder: (context, index) =>
+                    const SizedBox(height: 12.0),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 }
-

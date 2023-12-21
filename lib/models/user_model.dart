@@ -41,11 +41,11 @@ UserModel user1 = UserModel()
       UserInfomationModel()
         ..name = 'Facebook'
         ..icon = 'assets/icons/ic_facebook.svg'
-        ..content = 'Tran Binh Trong'
+        ..content = 'Trần Văn Trung'
         ..status = true,
       UserInfomationModel()
         ..name = 'Zalo'
         ..icon = 'assets/icons/ic_zalo.svg'
-        ..content = 'Tran Binh Trong'
+        ..content = 'Trần Văn Trung'
         ..status = true,
     ]);
