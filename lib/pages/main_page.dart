@@ -45,52 +45,56 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: pages[currentIndex],
-      bottomNavigationBar: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 11.0, vertical: 14.0),
-        decoration: const BoxDecoration(
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black,
-              offset: Offset(0.0, 3.0),
-              blurRadius: 7.0,
-            )
-          ],
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            ...List.generate(
-              5,
-              (index) => InkWell(
-                onTap: () => setState(() => currentIndex = index),
-                child: SizedBox(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      SvgPicture.asset(
-                        mainIcons[index],
-                        // ignore: deprecated_member_use
+      bottomNavigationBar: _buildBottomNavigatorBar(),
+    );
+  }
+
+  Container _buildBottomNavigatorBar() {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 11.0, vertical: 14.0),
+      decoration: const BoxDecoration(
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black,
+            offset: Offset(0.0, 3.0),
+            blurRadius: 7.0,
+          )
+        ],
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          ...List.generate(
+            5,
+            (index) => InkWell(
+              onTap: () => setState(() => currentIndex = index),
+              child: SizedBox(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    SvgPicture.asset(
+                      mainIcons[index],
+                      // ignore: deprecated_member_use
+                      color: currentIndex == index
+                          ? AppColor.h065986
+                          : AppColor.h48484A,
+                    ),
+                    const SizedBox(height: 4.0),
+                    Text(
+                      mainTitles[index],
+                      style: AppStyle.h11w600.copyWith(
                         color: currentIndex == index
                             ? AppColor.h065986
                             : AppColor.h48484A,
                       ),
-                      const SizedBox(height: 4.0),
-                      Text(
-                        mainTitles[index],
-                        style: AppStyle.h11w600.copyWith(
-                          color: currentIndex == index
-                              ? AppColor.h065986
-                              : AppColor.h48484A,
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
