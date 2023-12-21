@@ -1,6 +1,6 @@
 import 'package:demo_flutter/components/hi_boss_app_bar.dart';
 import 'package:demo_flutter/models/user_model.dart';
-import 'package:demo_flutter/pages/remote_sales/home/widgets/user_social_item.dart';
+import 'package:demo_flutter/pages/remote_sales/profile/widgets/user_social_item.dart';
 import 'package:demo_flutter/resources/app_color.dart';
 import 'package:demo_flutter/resources/app_style.dart';
 import 'package:flutter/material.dart';
