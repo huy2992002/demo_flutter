@@ -1,3 +1,4 @@
+import 'package:demo_flutter/models/rs_pr_category_model.dart';
 import 'package:demo_flutter/models/rs_product_detail_model.dart';
 
 class RsProductModel {
@@ -9,6 +10,7 @@ class RsProductModel {
   String? unit;
   int? sole;
   bool? isSave;
+  List<RsPrCategoryModel>? category;
   RsProductDetailModel? detail;
   bool? isSelectCart;
   String? createOrderAt;
@@ -26,6 +28,11 @@ List<RsProductModel> rsProducts = [
     ..unit = 'K'
     ..sole = 12
     ..isSave = true
+    ..category = [
+      rsPrCategories[0],
+      rsPrCategories[2],
+      rsPrCategories[4],
+    ]
     ..detail = rsProductDetails[0],
   RsProductModel()
     ..id = '2231'
@@ -36,6 +43,11 @@ List<RsProductModel> rsProducts = [
     ..unit = 'Kg'
     ..sole = 79
     ..isSave = true
+    ..category = [
+      rsPrCategories[1],
+      rsPrCategories[3],
+      rsPrCategories[4],
+    ]
     ..detail = rsProductDetails[1],
   RsProductModel()
     ..id = '3863'
@@ -45,6 +57,11 @@ List<RsProductModel> rsProducts = [
     ..unit = 'K'
     ..sole = 12
     ..isSave = false
+    ..category = [
+      rsPrCategories[0],
+      rsPrCategories[2],
+      rsPrCategories[5],
+    ]
     ..detail = rsProductDetails[2],
   RsProductModel()
     ..id = '4653'
@@ -54,6 +71,11 @@ List<RsProductModel> rsProducts = [
     ..unit = 'K'
     ..sole = 12
     ..isSave = true
+    ..category = [
+      rsPrCategories[1],
+      rsPrCategories[3],
+      rsPrCategories[5],
+    ]
     ..detail = rsProductDetails[3],
   RsProductModel()
     ..id = '5612'
@@ -64,6 +86,11 @@ List<RsProductModel> rsProducts = [
     ..unit = 'K'
     ..sole = 12
     ..isSave = true
+    ..category = [
+      rsPrCategories[0],
+      rsPrCategories[1],
+      rsPrCategories[4],
+    ]
     ..detail = rsProductDetails[4],
   RsProductModel()
     ..id = '6877'
@@ -74,6 +101,11 @@ List<RsProductModel> rsProducts = [
     ..unit = 'Kg'
     ..sole = 12
     ..isSave = false
+    ..category = [
+      rsPrCategories[1],
+      rsPrCategories[4],
+      rsPrCategories[5],
+    ]
     ..detail = rsProductDetails[5],
 ];
 

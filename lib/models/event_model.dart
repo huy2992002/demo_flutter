@@ -23,4 +23,9 @@ List<EventModel> events = [
     ..title = 'Mua khoá học Toán tư duy Quốc tế - Tặng ngay Khoá ôn'
     ..dayStart = '2023-04-17T02:03:48.467Z'
     ..dayEnd = '2023-05-20T02:03:48.467Z',
+  EventModel()
+    ..avatar = 'assets/images/img_event_4.png'
+    ..title = 'Mua khoá học Toán tư duy Quốc tế - Tặng ngay Khoá ôn'
+    ..dayStart = '2023-04-17T02:03:48.467Z'
+    ..dayEnd = '2023-05-20T02:03:48.467Z',  
 ];

@@ -1,11 +1,17 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:demo_flutter/models/enterprise_model.dart';
 import 'package:demo_flutter/models/event_model.dart';
+import 'package:demo_flutter/models/rs_pr_category_model.dart';
 import 'package:demo_flutter/models/user_model.dart';
+import 'package:demo_flutter/pages/remote_sales/home/rs_all_enterprises.dart';
+import 'package:demo_flutter/pages/remote_sales/home/rs_all_events.dart';
 import 'package:demo_flutter/pages/remote_sales/home/widgets/rs_appbar_home.dart';
+import 'package:demo_flutter/pages/remote_sales/home/widgets/rs_category_item.dart';
+import 'package:demo_flutter/pages/remote_sales/home/widgets/rs_enterprise_item.dart';
+import 'package:demo_flutter/pages/remote_sales/home/widgets/rs_event_item.dart';
 import 'package:demo_flutter/pages/remote_sales/profile/user_detail_page.dart';
 import 'package:demo_flutter/resources/app_color.dart';
 import 'package:demo_flutter/resources/app_style.dart';
-import 'package:demo_flutter/utils/app_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -17,35 +23,6 @@ class RsHomePage extends StatefulWidget {
 }
 
 class _RsHomePageState extends State<RsHomePage> {
-  List<String> categoryIcons = [
-    'assets/icons/ic_bar_chart.svg',
-    'assets/icons/ic_new.svg',
-    'assets/icons/ic_mortgage.svg',
-    'assets/icons/ic_warranty.svg',
-    'assets/icons/ic_shopping_cart.svg',
-    'assets/icons/ic_shopping_bag.svg',
-  ];
-
-  List<String> categoryTitles = [
-    'Bán chạy',
-    'Mới',
-    'Hoa hồng cao',
-    'Phổ biến',
-    'Dễ bán',
-    'Khuyến mãi',
-  ];
-
-  List<String> supplierImgs = [
-    'assets/images/img_logo_squeegee.png',
-    'assets/images/img_logo_beekids.png',
-    'assets/images/img_logo_mnpedu.png',
-  ];
-
-  List<String> supplierTitles = [
-    'Công ty Giáo dục Tân Kỷ Nguyên',
-    'Ứng dụng giáo dục Beekids',
-    'Công ty Giáo dục MNP',
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,7 +61,9 @@ class _RsHomePageState extends State<RsHomePage> {
                 SizedBox(
                   height: 207,
                   child: GridView.builder(
-                    itemCount: 6,
+                    itemCount: rsPrCategories.length,
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 3,
@@ -92,16 +71,8 @@ class _RsHomePageState extends State<RsHomePage> {
                       mainAxisSpacing: 10.0,
                     ),
                     itemBuilder: (BuildContext context, int index) {
-                      return Column(
-                        children: [
-                          SvgPicture.asset(categoryIcons[index]),
-                          const SizedBox(height: 6.0),
-                          Text(
-                            categoryTitles[index],
-                            style: AppStyle.h14w600,
-                          )
-                        ],
-                      );
+                      final rsPrCategorie = rsPrCategories[index];
+                      return RsCategoryItem(rsPrCategorie: rsPrCategorie);
                     },
                   ),
                 ),
@@ -136,31 +107,22 @@ class _RsHomePageState extends State<RsHomePage> {
                       autoPlayAnimationDuration: const Duration(seconds: 2),
                     ),
                     itemBuilder: (context, index, realIndex) {
-                      return ClipRRect(
-                        borderRadius: BorderRadius.circular(12.0),
-                        child: SizedBox(
-                          width: 140,
-                          height: 200,
-                          child: Image.asset(
-                            supplierImgs[index],
-                            fit: BoxFit.fill,
-                          ),
-                        ),
-                      );
+                      final enterprise = enterprises[index];
+                      return RsEnterpriseItem(enterprise: enterprise);
                     },
                   ),
                 ),
                 const SizedBox(height: 12.0),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(
-                      'Xem tất cả',
-                      style: AppStyle.h14w600.copyWith(color: AppColor.h063782),
-                    ),
-                    const SizedBox(width: 4.0),
-                    SvgPicture.asset('assets/icons/ic_expand_more.svg')
-                  ],
+                _buildViewAllButton(
+                  context,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const RsAllEnterprise(),
+                      ),
+                    );
+                  },
                 ),
               ],
             ),
@@ -181,65 +143,52 @@ class _RsHomePageState extends State<RsHomePage> {
                 ),
                 const SizedBox(height: 16.0),
                 ListView.separated(
-                    physics: const NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    itemBuilder: (context, index) {
-                      final event = events[index];
-                      return Container(
-                        padding: const EdgeInsets.all(12.0),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(12.0),
-                          boxShadow: const [
-                            BoxShadow(
-                              color: AppColor.h48484A,
-                              offset: Offset(0.0, 0.0),
-                              blurRadius: 12.0,
-                            ),
-                          ],
-                        ),
-                        child: Row(
-                          children: [
-                            Image.asset(event.avatar ?? ''),
-                            const SizedBox(width: 12.0),
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(event.title ?? '',
-                                      style: AppStyle.h14w600),
-                                  const SizedBox(height: 12.0),
-                                  Text(
-                                    'Diễn ra từ ${event.dayStart.toDateTimeFormat()} - ${event.dayEnd.toDateTimeFormat()}',
-                                    style: AppStyle.h10w400,
-                                  )
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      );
-                    },
-                    separatorBuilder: (context, index) =>
-                        const SizedBox(height: 12.0),
-                    itemCount: events.length),
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  itemCount: 3,
+                  itemBuilder: (context, index) {
+                    final event = events[index];
+                    return RsEventItem(event: event);
+                  },
+                  separatorBuilder: (context, index) =>
+                      const SizedBox(height: 12.0),
+                ),
                 const SizedBox(height: 12.0),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(
-                      'Xem tất cả',
-                      style: AppStyle.h14w600.copyWith(color: AppColor.h063782),
-                    ),
-                    const SizedBox(width: 4.0),
-                    SvgPicture.asset('assets/icons/ic_expand_more.svg')
-                  ],
+                _buildViewAllButton(
+                  context,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const RsAllEvents(),
+                      ),
+                    );
+                  },
                 ),
               ],
             ),
           )
         ],
       ),
+    );
+  }
+
+  Row _buildViewAllButton(BuildContext context, {Function()? onPressed}) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        GestureDetector(
+          onTap: onPressed,
+          child: Text(
+            'Xem tất cả',
+            style: AppStyle.h14w600.copyWith(
+              color: AppColor.h063782,
+            ),
+          ),
+        ),
+        const SizedBox(width: 4.0),
+        SvgPicture.asset('assets/icons/ic_expand_more.svg')
+      ],
     );
   }
 }
