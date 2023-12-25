@@ -1,5 +1,6 @@
 import 'package:demo_flutter/components/hi_boss_app_bar.dart';
 import 'package:demo_flutter/models/enterprise_model.dart';
+import 'package:demo_flutter/pages/remote_sales/home/rs_enterprise_detail_page.dart';
 import 'package:demo_flutter/pages/remote_sales/home/widgets/rs_all_enterprise_item.dart';
 import 'package:demo_flutter/resources/app_color.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +33,16 @@ class _RsAllEnterpriseState extends State<RsAllEnterprise> {
           ),
           itemBuilder: (context, index) {
             final enterprise = enterprises[index];
-            return RsAllEnterpriseItem(enterprise: enterprise);
+            return RsAllEnterpriseItem(
+              enterprise: enterprise,
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>
+                      RsEnterpriseDetailPage(enterprise: enterprise),
+                ),
+              ),
+            );
           },
         ),
       ),
