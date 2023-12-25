@@ -10,7 +10,7 @@ class RsProductModel {
   String? unit;
   int? sole;
   bool? isSave;
-  List<RsPrCategoryModel>? category;
+  List<RsPrCategoryModel>? categories;
   RsProductDetailModel? detail;
   bool? isSelectCart;
   String? createOrderAt;
@@ -28,7 +28,7 @@ List<RsProductModel> rsProducts = [
     ..unit = 'K'
     ..sole = 12
     ..isSave = true
-    ..category = [
+    ..categories = [
       rsPrCategories[0],
       rsPrCategories[2],
       rsPrCategories[4],
@@ -43,7 +43,7 @@ List<RsProductModel> rsProducts = [
     ..unit = 'Kg'
     ..sole = 79
     ..isSave = true
-    ..category = [
+    ..categories = [
       rsPrCategories[1],
       rsPrCategories[3],
       rsPrCategories[4],
@@ -57,7 +57,7 @@ List<RsProductModel> rsProducts = [
     ..unit = 'K'
     ..sole = 12
     ..isSave = false
-    ..category = [
+    ..categories = [
       rsPrCategories[0],
       rsPrCategories[2],
       rsPrCategories[5],
@@ -71,7 +71,7 @@ List<RsProductModel> rsProducts = [
     ..unit = 'K'
     ..sole = 12
     ..isSave = true
-    ..category = [
+    ..categories = [
       rsPrCategories[1],
       rsPrCategories[3],
       rsPrCategories[5],
@@ -86,7 +86,7 @@ List<RsProductModel> rsProducts = [
     ..unit = 'K'
     ..sole = 12
     ..isSave = true
-    ..category = [
+    ..categories = [
       rsPrCategories[0],
       rsPrCategories[1],
       rsPrCategories[4],
@@ -101,7 +101,7 @@ List<RsProductModel> rsProducts = [
     ..unit = 'Kg'
     ..sole = 12
     ..isSave = false
-    ..category = [
+    ..categories = [
       rsPrCategories[1],
       rsPrCategories[4],
       rsPrCategories[5],

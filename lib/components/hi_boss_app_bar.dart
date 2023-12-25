@@ -36,7 +36,9 @@ class HiBossAppBar extends StatelessWidget implements PreferredSizeWidget {
             leftIcon != null
                 ? GestureDetector(
                     onTap: leftPressed,
-                    child: SvgPicture.asset(leftIcon!,width: 24.0,),
+                    child: SvgPicture.asset(
+                      leftIcon!,
+                    ),
                   )
                 : const SizedBox(width: 22.0),
             Text(
@@ -50,7 +52,9 @@ class HiBossAppBar extends StatelessWidget implements PreferredSizeWidget {
             rightIcon != null
                 ? GestureDetector(
                     onTap: rightPressed,
-                    child: SvgPicture.asset(rightIcon!,width: 24.0,),
+                    child: SvgPicture.asset(
+                      rightIcon!,
+                    ),
                   )
                 : const SizedBox(width: 22.0),
           ],
