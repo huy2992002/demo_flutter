@@ -6,6 +6,7 @@ import 'package:demo_flutter/models/user_model.dart';
 import 'package:demo_flutter/pages/remote_sales/home/rs_all_enterprises.dart';
 import 'package:demo_flutter/pages/remote_sales/home/rs_all_events.dart';
 import 'package:demo_flutter/pages/remote_sales/home/rs_category_detail_page.dart';
+import 'package:demo_flutter/pages/remote_sales/home/rs_enterprise_detail_page.dart';
 import 'package:demo_flutter/pages/remote_sales/home/widgets/rs_appbar_home.dart';
 import 'package:demo_flutter/pages/remote_sales/home/widgets/rs_category_item.dart';
 import 'package:demo_flutter/pages/remote_sales/home/widgets/rs_enterprise_item.dart';
@@ -110,7 +111,7 @@ class _RsHomePageState extends State<RsHomePage> {
                 SizedBox(
                   width: double.infinity,
                   child: CarouselSlider.builder(
-                    itemCount: 3,
+                    itemCount: enterprises.length,
                     options: CarouselOptions(
                       height: 140,
                       autoPlay: true,
@@ -121,7 +122,19 @@ class _RsHomePageState extends State<RsHomePage> {
                     ),
                     itemBuilder: (context, index, realIndex) {
                       final enterprise = enterprises[index];
-                      return RsEnterpriseItem(enterprise: enterprise);
+                      return RsEnterpriseItem(
+                        enterprise: enterprise,
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => RsEnterpriseDetailPage(
+                                enterprise: enterprise,
+                              ),
+                            ),
+                          );
+                        },
+                      );
                     },
                   ),
                 ),

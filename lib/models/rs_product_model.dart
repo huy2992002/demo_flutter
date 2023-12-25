@@ -1,3 +1,4 @@
+import 'package:demo_flutter/models/enterprise_model.dart';
 import 'package:demo_flutter/models/rs_pr_category_model.dart';
 import 'package:demo_flutter/models/rs_product_detail_model.dart';
 
@@ -14,6 +15,7 @@ class RsProductModel {
   RsProductDetailModel? detail;
   bool? isSelectCart;
   String? createOrderAt;
+  EnterpriseModel? enterprise;
 
   RsProductModel();
 }
@@ -33,7 +35,8 @@ List<RsProductModel> rsProducts = [
       rsPrCategories[2],
       rsPrCategories[4],
     ]
-    ..detail = rsProductDetails[0],
+    ..detail = rsProductDetails[0]
+    ..enterprise = enterprises[0],
   RsProductModel()
     ..id = '2231'
     ..name = 'Học toán cùng cây thước Bkids'
@@ -48,7 +51,9 @@ List<RsProductModel> rsProducts = [
       rsPrCategories[3],
       rsPrCategories[4],
     ]
-    ..detail = rsProductDetails[1],
+    ..detail = rsProductDetails[1]
+    ..enterprise = enterprises[1],
+
   RsProductModel()
     ..id = '3863'
     ..name = 'Hành trang vào lớp 1'
@@ -62,7 +67,9 @@ List<RsProductModel> rsProducts = [
       rsPrCategories[2],
       rsPrCategories[5],
     ]
-    ..detail = rsProductDetails[2],
+    ..detail = rsProductDetails[2]
+    ..enterprise = enterprises[2],
+
   RsProductModel()
     ..id = '4653'
     ..name = 'Chinh phục quốc kỳ - Cùng bé học lá cờ của các Quốc gia'
@@ -76,7 +83,9 @@ List<RsProductModel> rsProducts = [
       rsPrCategories[3],
       rsPrCategories[5],
     ]
-    ..detail = rsProductDetails[3],
+    ..detail = rsProductDetails[3]
+    ..enterprise = enterprises[3],
+
   RsProductModel()
     ..id = '5612'
     ..name = 'Chinh phục Quốc kỳ CĐ2'
@@ -91,7 +100,9 @@ List<RsProductModel> rsProducts = [
       rsPrCategories[1],
       rsPrCategories[4],
     ]
-    ..detail = rsProductDetails[4],
+    ..detail = rsProductDetails[4]
+    ..enterprise = enterprises[4],
+
   RsProductModel()
     ..id = '6877'
     ..name = 'Toán tư duy Vinabacus'
@@ -106,7 +117,9 @@ List<RsProductModel> rsProducts = [
       rsPrCategories[4],
       rsPrCategories[5],
     ]
-    ..detail = rsProductDetails[5],
+    ..detail = rsProductDetails[5]
+    ..enterprise = enterprises[4],
+
 ];
 
 List<RsProductModel> cartRsProducts = [
