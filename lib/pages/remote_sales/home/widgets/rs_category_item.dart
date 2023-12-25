@@ -7,21 +7,26 @@ class RsCategoryItem extends StatelessWidget {
   const RsCategoryItem({
     super.key,
     required this.rsPrCategorie,
+    this.onPressed,
   });
 
   final RsPrCategoryModel rsPrCategorie;
+  final Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SvgPicture.asset(rsPrCategorie.logo ?? ''),
-        const SizedBox(height: 6.0),
-        Text(
-          rsPrCategorie.name ?? '',
-          style: AppStyle.h14w600,
-        ),
-      ],
+    return GestureDetector(
+      onTap: onPressed,
+      child: Column(
+        children: [
+          SvgPicture.asset(rsPrCategorie.logo ?? ''),
+          const SizedBox(height: 6.0),
+          Text(
+            rsPrCategorie.name ?? '',
+            style: AppStyle.h14w600,
+          ),
+        ],
+      ),
     );
   }
 }
