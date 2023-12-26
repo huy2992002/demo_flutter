@@ -1,6 +1,7 @@
 import 'package:demo_flutter/components/hi_boss_app_bar.dart';
 import 'package:demo_flutter/components/text_field/hi_boss_search_box.dart';
 import 'package:demo_flutter/models/customer_model.dart';
+import 'package:demo_flutter/pages/remote_sales/customer/rs_add_customer_page.dart';
 import 'package:demo_flutter/pages/remote_sales/customer/widgets/rs_custumer_item.dart';
 import 'package:demo_flutter/resources/app_color.dart';
 import 'package:flutter/material.dart';
@@ -37,10 +38,18 @@ class _RsCustomerPageState extends State<RsCustomerPage> {
       onTap: FocusScope.of(context).unfocus,
       child: Scaffold(
         backgroundColor: AppColor.hF6F8FF,
-        appBar: const HiBossAppBar(
+        appBar: HiBossAppBar(
           leftIcon: 'assets/icons/ic_refresh.svg',
           title: 'Quản lý khách hàng nội bộ',
           rightIcon: 'assets/icons/ic_add.svg',
+          rightPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => RsAddCustomerPage(),
+              ),
+            );
+          },
         ),
         body: Column(
           children: [

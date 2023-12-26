@@ -1,5 +1,6 @@
 import 'package:demo_flutter/components/hi_boss_app_bar.dart';
 import 'package:demo_flutter/components/button/hi_boss_elevated_button.dart';
+import 'package:demo_flutter/components/text_field/hi_boss_text_field.dart';
 import 'package:demo_flutter/models/customer_model.dart';
 import 'package:demo_flutter/models/rs_product_model.dart';
 import 'package:demo_flutter/resources/app_color.dart';
@@ -46,9 +47,6 @@ class _RsProductCreateOrderState extends State<RsProductCreateOrder> {
     AppColor.hA9CD89,
   ];
 
-  final underlineInputBorder = const UnderlineInputBorder(
-    borderSide: BorderSide(color: AppColor.hE6E6E9),
-  );
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -113,23 +111,7 @@ class _RsProductCreateOrderState extends State<RsProductCreateOrder> {
                 const SizedBox(height: 18.0),
                 _buildContainer(
                   color: Colors.white,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Mô tả đơn hàng',
-                        style:
-                            AppStyle.h13w600.copyWith(color: AppColor.h434343),
-                      ),
-                      TextField(
-                        decoration: InputDecoration(
-                          border: underlineInputBorder,
-                          enabledBorder: underlineInputBorder,
-                          focusedBorder: underlineInputBorder,
-                        ),
-                      ),
-                    ],
-                  ),
+                  child: const HiBossTextField(labelText: 'Mô tả đơn hàng'),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(
@@ -380,31 +362,9 @@ class _RsProductCreateOrderState extends State<RsProductCreateOrder> {
                 const SizedBox(height: 18.0),
                 _buildContainer(
                   color: Colors.white,
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          const Expanded(
-                            child: Text(
-                              'Ghi chú',
-                              style: AppStyle.h14w500,
-                            ),
-                          ),
-                          Text(
-                            '0/200',
-                            style: AppStyle.h14w500
-                                .copyWith(color: AppColor.hB8B8BF),
-                          ),
-                        ],
-                      ),
-                      TextField(
-                        decoration: InputDecoration(
-                          border: underlineInputBorder,
-                          enabledBorder: underlineInputBorder,
-                          focusedBorder: underlineInputBorder,
-                        ),
-                      ),
-                    ],
+                  child: const HiBossTextField(
+                    labelText: 'Ghi chú',
+                    secondText: '0/200',
                   ),
                 ),
                 const SizedBox(height: 18.0),
