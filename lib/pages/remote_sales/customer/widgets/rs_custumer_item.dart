@@ -16,8 +16,9 @@ class RsCustomerItem extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(12.0),
       decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(20.0)),
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20.0),
+      ),
       child: Row(
         children: [
           Image.asset(customer.avatar ?? ''),
@@ -43,15 +44,15 @@ class RsCustomerItem extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: Colors.white,
                         border: Border.all(
-                          color: customer.labels?[index].color ??
-                              AppColor.hFFB3AF,
+                          color:
+                              customer.labels?[index].color ?? AppColor.hFFB3AF,
                         ),
                         borderRadius: BorderRadius.circular(20.0),
                       ),
                       child: Text(
                         customer.labels?[index].name ?? '',
-                        style: AppStyle.h12w600.copyWith(
-                            color: customer.labels?[index].color),
+                        style: AppStyle.h12w600
+                            .copyWith(color: customer.labels?[index].color),
                       ),
                     ),
                   )
