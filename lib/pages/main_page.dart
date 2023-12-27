@@ -51,7 +51,6 @@ class _MainPageState extends State<MainPage> {
 
   Container _buildBottomNavigatorBar() {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 11.0, vertical: 14.0),
       decoration: const BoxDecoration(
         color: Colors.white,
         boxShadow: [
@@ -66,30 +65,44 @@ class _MainPageState extends State<MainPage> {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           ...List.generate(
-            5,
-            (index) => InkWell(
-              onTap: () => setState(() => currentIndex = index),
+            mainIcons.length,
+            (index) => Expanded(
               child: SizedBox(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    SvgPicture.asset(
-                      mainIcons[index],
-                      // ignore: deprecated_member_use
-                      color: currentIndex == index
-                          ? AppColor.h065986
-                          : AppColor.h48484A,
-                    ),
-                    const SizedBox(height: 4.0),
-                    Text(
-                      mainTitles[index],
-                      style: AppStyle.h11w600.copyWith(
+                child: InkWell(
+                  onTap: () => setState(() => currentIndex = index),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Container(
+                        width: 40.0,
+                        height: 4.0,
+                        decoration: BoxDecoration(
+                          color: currentIndex == index
+                              ? AppColor.h065986
+                              : Colors.white,
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                      ),
+                      const SizedBox(height: 8.0),
+                      SvgPicture.asset(
+                        mainIcons[index],
+                        // ignore: deprecated_member_use
                         color: currentIndex == index
                             ? AppColor.h065986
                             : AppColor.h48484A,
                       ),
-                    ),
-                  ],
+                      const SizedBox(height: 4.0),
+                      Text(
+                        mainTitles[index],
+                        style: AppStyle.h11w600.copyWith(
+                          color: currentIndex == index
+                              ? AppColor.h065986
+                              : AppColor.h48484A,
+                        ),
+                      ),
+                      const SizedBox(height: 8.0),
+                    ],
+                  ),
                 ),
               ),
             ),

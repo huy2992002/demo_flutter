@@ -36,7 +36,6 @@ class _RsCategoryDetailPageState extends State<RsCategoryDetailPage> {
         }
       }
     }
-    print(productCategories);
     setState(() {});
   }
 

@@ -22,7 +22,7 @@ class RsEnterpriseDetailPage extends StatelessWidget {
         title: 'Chi tiết nhà cung cấp',
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
             Container(
