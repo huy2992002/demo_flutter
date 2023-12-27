@@ -5,7 +5,7 @@ class CustomerModel {
   String? avatar;
   String? name;
   String? phone;
-  List<Lable>? labels;
+  List<Label>? labels;
 
   CustomerModel();
 }
@@ -15,11 +15,11 @@ CustomerModel customer = CustomerModel()
   ..name = 'Nguyễn Thị Thu Hồi'
   ..phone = '(+84) 0909 332 332'
   ..labels = [
-    Lable()
-      ..name = 'Nhãn dán 1'
+    Label()
+      ..name = 'Mới'
       ..color = AppColor.hFFB3AF,
-    Lable()
-      ..name = 'Nhãn dán 2'
+    Label()
+      ..name = 'Phổ thông'
       ..color = AppColor.h90E6D7,
   ];
 
@@ -29,11 +29,11 @@ List<CustomerModel> rsCustomers = [
     ..name = 'Nguyễn Thị An'
     ..phone = '(+84)909 122 889'
     ..labels = [
-      Lable()
-        ..name = 'Nhãn dán 1'
+      Label()
+        ..name = 'Mới'
         ..color = AppColor.hFFB3AF,
-      Lable()
-        ..name = 'Nhãn dán 2'
+      Label()
+        ..name = 'Phổ thông'
         ..color = AppColor.h90E6D7,
     ],
   CustomerModel()
@@ -41,8 +41,8 @@ List<CustomerModel> rsCustomers = [
     ..name = 'Đặng Ngọc Ân'
     ..phone = '(+84) 909 445 619'
     ..labels = [
-      Lable()
-        ..name = 'Nhãn dán 1'
+      Label()
+        ..name = 'Mới'
         ..color = AppColor.hFFB3AF,
     ],
   CustomerModel()
@@ -50,8 +50,8 @@ List<CustomerModel> rsCustomers = [
     ..name = 'Trần Nhật Anh'
     ..phone = '(+84)778 058 216'
     ..labels = [
-      Lable()
-        ..name = 'Nhãn dán 2'
+      Label()
+        ..name = 'Phổ thông'
         ..color = AppColor.h90E6D7,
     ],
   CustomerModel()
@@ -59,11 +59,11 @@ List<CustomerModel> rsCustomers = [
     ..name = 'Phạm Thị Bình'
     ..phone = '(+84)905 459 319'
     ..labels = [
-      Lable()
-        ..name = 'Nhãn dán 1'
+      Label()
+        ..name = 'Mới'
         ..color = AppColor.hFFB3AF,
-      Lable()
-        ..name = 'Nhãn dán 2'
+      Label()
+        ..name = 'Phổ thông'
         ..color = AppColor.h90E6D7,
     ],
   CustomerModel()
@@ -71,15 +71,35 @@ List<CustomerModel> rsCustomers = [
     ..name = 'Nguyễn Trình Bồng'
     ..phone = '(+84)977 120 456'
     ..labels = [
-      Lable()
-        ..name = 'Nhãn dán 2'
+      Label()
+        ..name = 'Phổ thông'
         ..color = AppColor.h90E6D7,
     ],
 ];
 
-class Lable {
+class Label {
   String? name;
   Color? color;
+  bool? selected;
 
-  Lable();
+  Label();
 }
+
+List<Label> labels = [
+  Label()
+    ..name = 'Vip'
+    ..color = AppColor.hFDE795
+    ..selected = false,
+  Label()
+    ..name = 'Phổ thông'
+    ..color = AppColor.h90E6D7
+    ..selected = false,
+  Label()
+    ..name = 'Tiềm năng'
+    ..color = AppColor.hA4D7F4
+    ..selected = false,
+  Label()
+    ..name = 'Mới'
+    ..color = AppColor.hFFB3AF
+    ..selected = false,
+];

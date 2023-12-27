@@ -46,7 +46,7 @@ class _RsCustomerPageState extends State<RsCustomerPage> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => RsAddCustomerPage(),
+                builder: (context) => const RsAddCustomerPage(),
               ),
             );
           },
